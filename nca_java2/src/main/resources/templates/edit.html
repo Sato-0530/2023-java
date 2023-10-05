@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<link href="re.css" rel="stylesheet">
+		<link href="main.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;800&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>編集画面</title>
+	</head>	
+	<body>
+	<div class="wrapper">
+		<div class="main">
+			<h1>編集画面</h1>
+			<div class="content">	
+				<form method="post" action="/edit/action" th:object="${form}">
+					<input type="text" th:field="*{name}" placeholder="名前(漢字)" required>
+					<br>
+					<input type="text" th:field="*{kana}" placeholder="フリガナ" required>
+					<div class="birthday">
+						<label>生年月日</label>
+						<input type="date" th:field="*{birthday}" required>
+					</div>
+					<div class="gender">
+						<label>性別</label>
+						<input type="radio" id="M" th:field="*{gender}" value="M">M
+						<input type="radio" id="F" th:field="*{gender}" value="F">F
+						<input type="radio" id="U" th:field="*{gender}" value="U">U
+					</div>
+					<div class="blood_type">
+						<label>血液型</label>
+						<input type="radio" id="blood_A" th:field="*{bloodtype}" value="A" required>A
+						<input type="radio" id="blood_B" th:field="*{bloodtype}" value="B">B
+						<input type="radio" id="blood_AB" th:field="*{bloodtype}" value="AB">AB
+						<input type="radio" id="blood_O" th:field="*{bloodtype}" value="O">O
+					</div>
+					<input type="email" placeholder="Mail" th:field="*{email}" required>
+					<br>
+					<input type="tel" placeholder="Tel" th:field="*{tel}" required>
+					<br>
+					<input type="text" placeholder="郵便番号" th:field="*{zip}" required>
+					<br>
+					<input type="text" th:field="*{address}" placeholder="住所" required>
+					<br>
+					<div class="button_border">
+						<input type="submit" th:attr="formaction=@{/edit/action}" th:onclick="return editBtn('変更')" value="変更する">
+						<input type="submit" th:attr="formaction=@{/edit/delete}" th:onclick="return editBtn('削除')" value="削除する">
+						<input type="button" onclick="location.href='/search'" value="検索画面へ戻る">
+					</div>
+					<input type="hidden" th:field="*{password}">
+				</form>
+			</div>
+		</div>
+		<script src="/main.js"></script>
+		<footer>
+			<small>Java company&copy;2023 Copyright</small>
+		</footer>
+	</div>
+	</body>
+</html>

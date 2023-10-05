@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<link href="re.css" rel="stylesheet">
+		<link href="main.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;800&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>ログイン画面</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="main">
+				<h1>ログイン画面</h1>
+				<div class="content">
+					<form method="post" action="menu">
+					    <input type="email" id="name" name="name" placeholder="mail"><br>
+					    <input type="password" id="password" name="password" placeholder="password"><br>
+						<input type="submit" value ="ログイン" >
+					</form>
+				</div>
+			</div>
+			<footer>
+				<small>Java company&copy;2023 Copyright</small>
+			</footer>
+		</div>
+	</body>
+</html>
