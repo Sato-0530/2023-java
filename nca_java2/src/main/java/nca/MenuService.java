@@ -3,13 +3,12 @@ package nca;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Service_all 
+public class MenuService 
 {
-	//menu-----------------------------------------------------
 	public boolean isAuth(UserForm form) 
 	{
 		boolean auth = false;
-		//UserEntity entity = findById(form);
+		UserEntity entity = findById(form);
 		
 		if("nca5f502".equals(form.getPassword()))
 		{
@@ -24,6 +23,5 @@ public class Service_all
 		entity.setPassword("nca5f502");
 		return entity;
 	}
-	//add----------------------------------------------------------------
-
+	
 }
